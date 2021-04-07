@@ -1,5 +1,71 @@
-import logo from './logo.svg';
 import './App.css';
+// import React, { lazy, Component } from "react";
+// import { Route, Switch } from "react-router-dom";
+// import { getWeather } from "./services/services";
+// import Navigation from './navigation/Header-navigation';
+// import Navigation2 from './navigation/Weather-navigation';
+
+// const Weather = lazy(() =>
+//   import(
+//     "./pages/weather-page/weather-page.js" )
+// );
+
+// const News = lazy(() =>
+//   import("./pages/news-page/news-page.js" )
+// );
+
+// const Contact = lazy(() =>
+//   import("./pages/contact-page/contact-page.js")
+// );
+
+// const NotFoundPage = lazy(() =>
+//   import(
+//     "./pages/not-found-page/not-found-page.js")
+// );
+// const Today = lazy(() =>
+//   import(
+//     "./weather-pages/today-page.js" )
+// );
+//const Tomorrow = lazy(() =>
+//   import(
+//     "./weather-pages/tomorrow-page.js" )
+// );
+// const Week = lazy(() =>
+//   import(
+//     "./weather-pages/week-page.js" )
+// );
+
+
+// class App extends Component {
+//   state = {
+//     weather: [],
+//   };
+
+  
+//   async componentDidMount() {
+//     const weatherReceipt = getWeather().then(data =>
+//       this.setState({ weather: data })
+//     );
+//   }
+//   render() {
+//     return (
+//       <div>
+//         <Navigation/>
+//           <Switch>
+//             <Route path="/" exact component={Weather} />
+//             <Route path="/news" component={News} />
+//             <Route path="/contact" component={Contact} />
+//             <Route component={NotFoundPage} />
+              //  <Route path="/today" component={Today} />
+              //  <Route path="/tomorrow" component={Tomorrow} />
+              //  <Route path="/week" component={Week} />
+
+//           </Switch> 
+//      </div>
+//     );
+//   }
+// }
+
 
 function App() {
   return (
@@ -44,7 +110,7 @@ function App() {
     <section className="today-tomorrow">
       <div>
         <p className="title">The weather for tomorrow</p>
-        <p className="day">Suturday, April 10</p>
+        <p className="day">Saturday, April 10</p>
         <p className="temperature">+10</p>
         <p>Feels like +12 </p>
         <p>Sunny</p>
@@ -85,18 +151,3 @@ function App() {
 export default App;
 
 
-
-  {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
