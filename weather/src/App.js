@@ -6,10 +6,13 @@ import "./App.css";
 const App = () => {
   const [todayData, setTodayData] = useState(false);
   // const [oneCall, setOneCall] = useState(null);
+  const [call5Day, setCall5Day] = useState(false);
 
   const loadTestData = async () => {
     const allData = await api.CurrentWeatherData();
     setTodayData(allData.data);
+    const fiveDayData = await api.Call5DayData();
+    setCall5Day(fiveDayData.data);
     const lat = allData.data.coord.lat;
     const lon = allData.data.coord.lon;
     const someData = await api.OneCallAPI(lat, lon);
@@ -18,14 +21,14 @@ const App = () => {
 
   useEffect(() => {
     loadTestData();
-    console.log("ура ", todayData);
+    console.log("loaded 5 day data", call5Day);
   }, []);
   return (
     <div>
-      {todayData ? (
+      {call5Day ? (
         <FormForToday
           date={"09"}
-          temperature={Math.floor(todayData.main.temp - 273)}
+          // temperature={Math.floor(call5DayData.main.temp - 273)}
           condition={2}
           wind={1}
           pressure={2}

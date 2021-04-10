@@ -13,5 +13,15 @@ class ApiWeather {
     );
     return dataOneCall.data;
   };
+
+  Call5DayData = async (city) => {
+    const dataCall5Day = await axios.get(
+      `https://api.openweathermap.org/data/2.5/forecast?q=${"Kyiv"}&appid=${key}`
+    );
+    return dataCall5Day;
+  };
+ 
 }
+
+
 export default new ApiWeather();
