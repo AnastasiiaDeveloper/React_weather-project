@@ -1,15 +1,30 @@
-import {LOAD_DATA} from './../actionType'
-import { Provider } from 'react-redux';
+import { INPUT_CITY, LOAD_DATA } from "./../actionType";
+import { Provider } from "react-redux";
 
 const initialState = {
-    obj: {},
-}
+  allDataObjTwo: {},
+  findCity: "",
+};
 
-  // Болванка под reducer
-  const reducer = (state = initialState, action) => state;
-  
-  const store = createStore(reducer);
-  
-  <Provider store={store}>
-    <App />
-  </Provider>;
+export default function reducer(state = initialState, action) {
+  switch (action.type) {
+    case INPUT_CITY:
+      return {
+        ...state,
+        findCity: action.city,
+      };
+      break;
+
+    case LOAD_DATA:
+      return {
+        ...state,
+        allDataObjTwo: action.data,
+      };
+
+      break;
+
+    default:
+      return state;
+      break;
+  }
+}

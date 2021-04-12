@@ -1,22 +1,23 @@
-import axios from "axios";
+import { INPUT_CITY, LOAD_DATA } from "./actionType";
+import api from "./../api/apiWeather";
 
-
+export const inputCity = (city) => {
+  return {
+    type: INPUT_CITY,
+    city,
+  };
+};
 
 export const loadDataAction = (data) => {
-
-    return { type: LOAD_DATA, data };
-  
+  return {
+    type: LOAD_DATA,
+    data,
   };
-  
-  export const thunkLoadData = () => {
-  
-    return (dispatch) => {
-  
-      axios.get("http://").then((data) => {
-  
-        dispatch(loadDataAction(data));
-  
-      });
-  
-    };
+};
+
+export const thunkStartLoadData = () => {
+  return async (dispatch) => {
+    const data = await api();
+    dispatch(loadDataAction(data));
+  };
 };

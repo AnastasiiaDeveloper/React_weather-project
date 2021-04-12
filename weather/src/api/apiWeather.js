@@ -1,27 +1,18 @@
 import axios from "axios";
 const key = "f553d313edd0d50254f7ee1ba1440fe5";
-class ApiWeather {
-  CurrentWeatherData = async (city) => {
-    const dataToday = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${"Kyiv"}&appid=${key}`
-    );
-    return dataToday;
+const defaultNameCity = "Kyiv";
+const ApiWeather = async (city = defaultNameCity) => {
+  const dataCall5Day = await axios.get(
+    `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${key}`
+  );
+  const coord = await dataCall5Day.data.city.coord;
+  const dataOneCall = await axios.get(
+    `https://api.openweathermap.org/data/2.5/onecall?lat=${coord.lat}&lon=${coord.lon}&exclude={part}&appid=${key}`
+  );
+  return {
+    fiveDaysData: dataCall5Day.data,
+    oneCallData: dataOneCall.data,
   };
-  OneCallAPI = async (lat, lon) => {
-    const dataOneCall = await axios.get(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${key}`
-    );
-    return dataOneCall.data;
-  };
+};
 
-  Call5DayData = async (city) => {
-    const dataCall5Day = await axios.get(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${"Kyiv"}&appid=${key}`
-    );
-    return dataCall5Day;
-  };
- 
-}
-
-
-export default new ApiWeather();
+export default ApiWeather;
