@@ -1,6 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
 import React, { useState, useEffect } from "react";
-import { inputCity, thunkStartLoadData } from "../../redux/actions";
+import {
+  inputCity,
+  thunkStartLoadData,
+  thunkSetInsertedCity,
+} from "../../redux/actions";
 
 const Find = () => {
   const [cityName, setCityName] = useState("");
@@ -11,6 +15,7 @@ const Find = () => {
 
   const getData = () => {
     dispatch(inputCity(cityName));
+    dispatch(thunkSetInsertedCity(cityName));
   };
 
   const getDataOnEnter = (e) => {
@@ -23,13 +28,13 @@ const Find = () => {
     setCityName(e.target.value);
   };
 
-  const firstLoadThunk = () => {
-    dispatch(thunkStartLoadData());
-  };
+  // const firstLoadThunk = () => {
+  //   dispatch(thunkStartLoadData());
+  // };
 
-  useEffect(() => {
-    firstLoadThunk();
-  }, []);
+  // useEffect(() => {
+  //   firstLoadThunk();
+  // }, []);
 
   useEffect(() => {
     console.log(stateCity);

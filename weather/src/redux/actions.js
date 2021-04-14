@@ -21,3 +21,10 @@ export const thunkStartLoadData = () => {
     dispatch(loadDataAction(data));
   };
 };
+
+export const thunkSetInsertedCity = (city) => {
+  return async (dispatch) => {
+    const data = await api(city);
+    dispatch(loadDataAction(data));
+  };
+};

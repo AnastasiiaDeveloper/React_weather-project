@@ -1,9 +1,19 @@
 import { INPUT_CITY, LOAD_DATA } from "./../actionType";
-import { Provider } from "react-redux";
+import transformDataForTopBar from "./../../api/trasformDataForTopBar";
 
 const initialState = {
   allDataObjTwo: {},
   findCity: "",
+  arrTop: [
+    {
+      day: "monday",
+      dateDay: 14,
+      month: "april",
+      img: "04d",
+      tMin: "+5",
+      tMax: "+10",
+    },
+  ],
 };
 
 export default function reducer(state = initialState, action) {
@@ -19,6 +29,7 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         allDataObjTwo: action.data,
+        arrTop: transformDataForTopBar(action.data.oneCallData),
       };
 
       break;

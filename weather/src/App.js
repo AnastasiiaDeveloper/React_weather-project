@@ -4,12 +4,14 @@ import store from "./redux/reducer/rootReducer";
 // import FormForToday from "./components/weather-pages/today-page";
 import "./App.css";
 import Find from "./components/top-bar/find";
+import MainWidget from './showTemperature/mainWidget'
 
 const App = () => {
   return (
     <Provider store={store}>
       <div>
         <Find />
+        <MainWidget/>
       </div>
     </Provider>
   );

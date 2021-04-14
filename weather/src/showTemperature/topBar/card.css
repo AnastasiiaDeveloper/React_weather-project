@@ -1,0 +1,12 @@
+.cardBlock {
+  width: 100px;
+  height: 250px;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 10px;
+}
+.positionTopCard {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
