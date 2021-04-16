@@ -4,16 +4,21 @@ import store from "./redux/reducer/rootReducer";
 // import FormForToday from "./components/weather-pages/today-page";
 import "./App.css";
 import Find from "./components/top-bar/find";
-import MainWidget from './showTemperature/mainWidget'
+import MainWidget from "./showTemperature/mainWidget";
+import { BrowserRouter } from "react-router-dom";
 
 const App = () => {
   return (
-    <Provider store={store}>
-      <div>
-        <Find />
-        <MainWidget/>
-      </div>
-    </Provider>
+    <BrowserRouter>
+      <Provider store={store}>
+        <div>
+          {/* <p>hello p</p> */}
+
+          <Find />
+          <MainWidget />
+        </div>
+      </Provider>
+    </BrowserRouter>
   );
 };
 

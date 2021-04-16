@@ -1,12 +1,14 @@
 .cardBlock {
-  width: 100px;
+  width: 160px;
   height: 250px;
   border: 1px solid black;
   border-radius: 15px;
+  text-align: center;
   padding: 10px;
+  padding-bottom: 30px;
 }
 .positionTopCard {
-  width: 100%;
+  width: 800px;
   display: flex;
-  justify-content: space-around;
+  margin: 0 auto;
 }

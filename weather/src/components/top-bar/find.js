@@ -8,8 +8,11 @@ import {
 
 const Find = () => {
   const [cityName, setCityName] = useState("");
+  // const [nameCityShow, setNameCityShow] = useState("");
 
   const stateCity = useSelector((state) => state);
+
+  const cityShow = useSelector((state) => state.findCity);
 
   const dispatch = useDispatch();
 
@@ -28,14 +31,6 @@ const Find = () => {
     setCityName(e.target.value);
   };
 
-  // const firstLoadThunk = () => {
-  //   dispatch(thunkStartLoadData());
-  // };
-
-  // useEffect(() => {
-  //   firstLoadThunk();
-  // }, []);
-
   useEffect(() => {
     console.log(stateCity);
   }, [stateCity]);
@@ -49,12 +44,8 @@ const Find = () => {
         value={cityName}
       />
       <button onClick={getData}> Here we go</button>
-      {/* <button onClick={testThunk}> Thunk load data</button> */}
+      {cityShow}
     </div>
   );
 };
 export default Find;
-// top-Bar
-// inf-bar
-
-// main-widget -> top + inf

@@ -3,7 +3,7 @@ import transformDataForTopBar from "./../../api/trasformDataForTopBar";
 
 const initialState = {
   allDataObjTwo: {},
-  findCity: "",
+  findCity: "Киев",
   arrTop: [
     {
       day: "monday",
