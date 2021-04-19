@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import React, { useState, useEffect } from "react";
+import "./find.css";
 import {
   inputCity,
   thunkStartLoadData,
@@ -42,9 +43,10 @@ const Find = () => {
         onChange={handleOnChange}
         onKeyPress={getDataOnEnter}
         value={cityName}
+        className="input"
       />
       <button onClick={getData}> Here we go</button>
-      {cityShow}
+      <p style={{ fontSize: "2em", color: "green" }}> {cityShow}</p>
     </div>
   );
 };

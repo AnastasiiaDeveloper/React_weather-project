@@ -1,5 +1,6 @@
 import { INPUT_CITY, LOAD_DATA } from "./../actionType";
 import transformDataForTopBar from "./../../api/trasformDataForTopBar";
+import infoDetailsArr from "./../../api/infoBarTransform";
 
 const initialState = {
   allDataObjTwo: {},
@@ -14,6 +15,7 @@ const initialState = {
       tMax: "+10",
     },
   ],
+  detailsArr: null,
 };
 
 export default function reducer(state = initialState, action) {
@@ -26,10 +28,13 @@ export default function reducer(state = initialState, action) {
       break;
 
     case LOAD_DATA:
+      const { fiveDaysData, oneCallData } = action.data;
+      console.log(infoDetailsArr(fiveDaysData, oneCallData));
       return {
         ...state,
         allDataObjTwo: action.data,
-        arrTop: transformDataForTopBar(action.data.oneCallData),
+        arrTop: transformDataForTopBar(oneCallData),
+        detailsArr: "data details",
       };
 
       break;
