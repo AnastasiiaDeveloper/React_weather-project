@@ -24,26 +24,48 @@ export default function infoDetailsArr(fiveDaysData, arrOneCall) {
     });
   };
   const allTimeForDay = (num) => {
-    function getDaySet(el, getD) {
-      let dataArrT = new Date(el.dt * 1000);
-      dataArrT.setMilliseconds(-3 * 60 * 60 * 1000);
-      if (dataArrT.getDate() === getD) {
+    function getInfoDay(el, numDay) {
+      let timeTransform = new Date(el.dt * 1000);
+      timeTransform.setMilliseconds(-3 * 60 * 60 * 1000);
+      if (timeTransform.getDate() === numDay) {
         return {
-          el,
-          time: dataArrT.getHours(),
+          info: el,
+          time: timeTransform.getHours(),
         };
       }
     }
 
-    const allDateTemp = list.filter((el) => {
-      return getDaySet(el, num);
+    const allDateTemp = list.map((el) => {
+      return getInfoDay(el, num);
     });
     const findHours = (hours) => {
-      return allDateTemp.filter((el, time) => {
+      const data = allDateTemp.filter(function (element) {
+        return element !== undefined;
+      });
+      return data.filter(({ info, time }) => {
         if (time === hours) {
-          return el;
+          return info;
         }
       });
+    };
+    const ifEmptyArr = (hours, param) => {
+      switch (param) {
+        case "img":
+          return findHours(hours).length < 1
+            ? "--"
+            : findHours(hours)[0].info.weather[0].icon;
+          break;
+        case "temp":
+          return findHours(hours).length < 1
+            ? "--"
+            : Math.floor(findHours(hours)[0].info.main.temp - 273);
+          break;
+        default:
+          return findHours(hours).length < 1
+            ? "--"
+            : findHours(hours)[0].info.main.humidity;
+          break;
+      }
     };
     return [
       {
@@ -51,15 +73,15 @@ export default function infoDetailsArr(fiveDaysData, arrOneCall) {
         twoTimes: [
           {
             time: "00:00",
-            img: findHours(0)[0].weather[0].icon,
-            temp: Math.floor(findHours(0)[0].main.temp - 273),
-            humidity: findHours(0)[0].main.humidity,
+            img: ifEmptyArr(0, "img"),
+            temp: ifEmptyArr(0, "temp"),
+            humidity: ifEmptyArr(0, "humidity"),
           },
           {
             time: "03:00",
-            img: "07d",
-            temp: "+4",
-            humidity: "0,02",
+            img: ifEmptyArr(3, "img"),
+            temp: ifEmptyArr(3, "temp"),
+            humidity: ifEmptyArr(3, "humidity"),
           },
         ],
       },
@@ -68,15 +90,15 @@ export default function infoDetailsArr(fiveDaysData, arrOneCall) {
         twoTimes: [
           {
             time: "06:00",
-            img: "08d",
-            temp: "+4",
-            humidity: "0,02",
+            img: ifEmptyArr(6, "img"),
+            temp: ifEmptyArr(6, "temp"),
+            humidity: ifEmptyArr(6, "humidity"),
           },
           {
             time: "09:00",
-            img: "07d",
-            temp: "+4",
-            humidity: "0,02",
+            img: ifEmptyArr(9, "img"),
+            temp: ifEmptyArr(9, "temp"),
+            humidity: ifEmptyArr(9, "humidity"),
           },
         ],
       },
@@ -85,15 +107,15 @@ export default function infoDetailsArr(fiveDaysData, arrOneCall) {
         twoTimes: [
           {
             time: "12:00",
-            img: "08d",
-            temp: "+4",
-            humidity: "0,02",
+            img: ifEmptyArr(12, "img"),
+            temp: ifEmptyArr(12, "temp"),
+            humidity: ifEmptyArr(12, "humidity"),
           },
           {
             time: "15:00",
-            img: "07d",
-            temp: "+4",
-            humidity: "0,02",
+            img: ifEmptyArr(15, "img"),
+            temp: ifEmptyArr(15, "temp"),
+            humidity: ifEmptyArr(15, "humidity"),
           },
         ],
       },
@@ -102,15 +124,15 @@ export default function infoDetailsArr(fiveDaysData, arrOneCall) {
         twoTimes: [
           {
             time: "18:00",
-            img: "08d",
-            temp: "+4",
-            humidity: "0,02",
+            img: ifEmptyArr(18, "img"),
+            temp: ifEmptyArr(18, "temp"),
+            humidity: ifEmptyArr(18, "humidity"),
           },
           {
             time: "21:00",
-            img: "07d",
-            temp: "+4",
-            humidity: "0,02",
+            img: ifEmptyArr(21, "img"),
+            temp: ifEmptyArr(21, "temp"),
+            humidity: ifEmptyArr(21, "humidity"),
           },
         ],
       },

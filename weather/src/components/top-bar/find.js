@@ -37,15 +37,16 @@ const Find = () => {
   }, [stateCity]);
 
   return (
-    <div>
+    <div className="part-for-input">
       <input
         type="search"
         onChange={handleOnChange}
         onKeyPress={getDataOnEnter}
         value={cityName}
+        placeholder="Enter the city you are interested in"
         className="input"
       />
-      <button onClick={getData}> Here we go</button>
+      <button onClick={getData} className="button"> Here we go</button>
       <p style={{ fontSize: "2em", color: "green" }}> {cityShow}</p>
     </div>
   );

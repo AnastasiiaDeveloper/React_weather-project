@@ -29,12 +29,11 @@ export default function reducer(state = initialState, action) {
 
     case LOAD_DATA:
       const { fiveDaysData, oneCallData } = action.data;
-      console.log(infoDetailsArr(fiveDaysData, oneCallData));
       return {
         ...state,
         allDataObjTwo: action.data,
         arrTop: transformDataForTopBar(oneCallData),
-        detailsArr: "data details",
+        detailsArr: infoDetailsArr(fiveDaysData, oneCallData),
       };
 
       break;

@@ -6,14 +6,17 @@ import "./App.css";
 import Find from "./components/top-bar/find";
 import MainWidget from "./showTemperature/mainWidget";
 import { BrowserRouter } from "react-router-dom";
+import "./App.css";
+import InnerBgImg from "./components/backgr-img/backgr.jpg"
 
 const App = () => {
   return (
     <BrowserRouter>
       <Provider store={store}>
-        <div>
-          {/* <p>hello p</p> */}
-
+        <div
+          className="backgroung-image"
+          style={{ backgroundImage: "url(" + InnerBgImg +")" }}
+        >
           <Find />
           <MainWidget />
         </div>
