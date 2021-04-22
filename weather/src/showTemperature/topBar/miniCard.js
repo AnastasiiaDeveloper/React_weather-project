@@ -24,23 +24,19 @@ const MiniCard = ({ day, dateDay, month, img, tMin, tMax }) => {
         <div>
           <p>{day}</p>
         </div>
-        <div>
-          <p>{dateDay}</p>
-        </div>
-        <div>
-          <p>{month}</p>
+        <div className={"date"}>
+          <p className={"dateDay"}>{dateDay}</p>
+          <p className={"month"}>{month}</p>
         </div>
         <div>
           <img src={`http://openweathermap.org/img/w/${img}.png`} />
         </div>
-        <div>
-          <p>
+        <div className={"temp"}>
+          <p className={"min"}>
             {" "}
             min: {min} {tMin} &deg;
           </p>
-        </div>
-        <div>
-          <p>
+          <p className={"max"}>
             {" "}
             max: {max} {tMax} &deg;
           </p>

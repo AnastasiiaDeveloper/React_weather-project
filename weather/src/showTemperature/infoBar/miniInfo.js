@@ -5,18 +5,19 @@ const MiniInfo = ({ time, img, temp, humidity }) => {
   return (
     <div className={"miniCardBlock"}>
       <div>
-        <p>time</p>
+        <p>{time = "00:00"}</p>
       </div>
       <div>
-        <p>img</p>
+        <p>{img}</p>
       </div>
       <div>
-        <p>temp</p>
+        <p>{temp}</p>
       </div>
       <div>
-        <p>humidity</p>
+        <p>{humidity}</p>
       </div>
     </div>
+    
   );
 };
 export default MiniInfo;

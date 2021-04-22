@@ -1,16 +1,40 @@
 .cardBlock {
-  width: 160px;
-  height: 220px;
-  border: 1px solid black;
+  width: 180px;
+  height: 164px;
+  border: 1px solid rgb(207, 198, 198);
   border-radius: 20px;
   text-align: center;
+  font-size: 15px;
   /* padding: 10px; */
   padding-bottom: 40px;
   background-color: aliceblue;
 }
 .positionTopCard {
-  width: 800px;
+  width: 900px;
   display: flex;
   margin: 0 auto;
-  margin-top: -30px;
+  margin-top: -42px;
+}
+
+.date {
+  display: flex;
+}
+
+.dateDay{
+  margin-left: 50px;
+}
+
+.month {
+  margin-left: 10px;
+}
+.temp {
+  display: flex; 
+}
+
+.min {
+  margin-left: 16px;
+}
+
+.max {
+  margin-left: 12px;
 }

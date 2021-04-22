@@ -21,7 +21,6 @@ const initialState = {
       img: "04d",
       temp: "---",
       humidity: "---",
-      
     },
   ],
   // detailsArr: null,

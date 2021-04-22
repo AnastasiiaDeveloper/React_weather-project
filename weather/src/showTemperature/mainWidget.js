@@ -1,6 +1,6 @@
 import InfoBar from "./infoBar/infoBar";
 import TopBar from "./topBar/topBar";
-import UnderBar from "./infoBar/underBar"
+// import UnderBar from "./infoBar/underBar"
 import { Route } from "react-router-dom";
 
 const MainWidget = () => {

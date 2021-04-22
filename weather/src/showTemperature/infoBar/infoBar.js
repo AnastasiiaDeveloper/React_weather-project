@@ -25,36 +25,46 @@ const InfoBar = () => {
     <div className={"underBlock"}>
       <div className={"cardBlock2"}>
         <div>
+          {/* <p>{yearNum}</p> */}
           <p>2021</p>
         </div>
         <div>
+          {/* <p>{monthNum}</p> */}
           <p>04</p>
         </div>
         <div>
           <p>{numDay}</p>
         </div>
         <div>
+          {/* <p>{dayNum}</p> */}
           <p>Monday</p>
         </div>
         <div>
+          {/* <p>{img}</p> */}
           <p>img</p>
         </div>
         <div>
-          <p>temp:+8</p>
+          {/* <p>{todayTemp}</p> */}
+          <p>todayTemp</p>
         </div>
         <div>
-          <p>feels like:-8</p>
+          {/* <p>{likeTemp}</p> */}
+          <p>likeTemp</p>
         </div>
         <div>
+          {/* <p>{wind}</p> */}
           <p>wind</p>
         </div>
         <div>
-          <p>speedWind</p>
+          {/* <p>{speedWind}</p> */}
+          <p>speed</p>
         </div>
         <div>
+          {/* <p>{humidity}</p> */}
           <p>humidity</p>
         </div>
         <div>
+          {/* <p>{pressure}</p> */}
           <p>pressure</p>
         </div>
       </div>
