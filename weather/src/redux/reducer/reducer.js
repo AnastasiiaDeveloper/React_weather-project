@@ -15,7 +15,16 @@ const initialState = {
       tMax: "+10",
     },
   ],
-  detailsArr: null,
+  detailsArr: [
+    {
+      time: "---",
+      img: "04d",
+      temp: "---",
+      humidity: "---",
+      
+    },
+  ],
+  // detailsArr: null,
 };
 
 export default function reducer(state = initialState, action) {

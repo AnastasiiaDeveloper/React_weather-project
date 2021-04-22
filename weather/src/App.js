@@ -7,7 +7,7 @@ import Find from "./components/top-bar/find";
 import MainWidget from "./showTemperature/mainWidget";
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-import InnerBgImg from "./components/backgr-img/backgr.jpg"
+import InnerBgImg from "./components/backgr-img/spring.jpg"
 
 const App = () => {
   return (
