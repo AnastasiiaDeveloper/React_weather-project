@@ -1,75 +1,99 @@
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import UnderBar from "./underBar"
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import UnderBar from "./underBar";
+import { pageSet, findDay } from "./../../redux/actions";
 import "./info.css";
 
 const InfoBar = () => {
+  const history = useHistory();
+  const [infState, setInfState] = useState(false);
   const { numDay } = useParams();
-  const detailDay = useSelector((state) => state.detailsArr);
+
+  const dispatch = useDispatch();
+  const detailDay = useSelector((state) => state.detailsDay);
+  const pageDay = useSelector((state) => state.page);
 
   useEffect(() => {
-    if (detailDay === null) {
-      console.log("null");
+    if (numDay === undefined) {
+      const today = new Date().getDate();
+      dispatch(pageSet(today));
+      history.push(`/day/${today}`);
     } else {
-      const dayInf = detailDay.filter(({ dayNum }) => +dayNum === +numDay);
-      console.log(dayInf);
+      dispatch(pageSet(numDay));
     }
-    console.log("show information" + numDay + "date day");
   }, [numDay]);
 
-
+  useEffect(() => {
+    if (pageDay !== null) {
+      dispatch(findDay(pageDay));
+    }
+  }, [pageDay]);
+  useEffect(() => {
+    if (detailDay === null) {
+      setInfState(false);
+    } else {
+      setInfState(detailDay);
+    }
+  }, [detailDay]);
 
   return (
     <>
-    <div className={"underBlock"}>
-      <div className={"cardBlock2"}>
-        <div>
-          {/* <p>{yearNum}</p> */}
-          <p>2021</p>
+      {infState ? (
+        <div className={"underBlock"}>
+          <div className={"cardBlock2"}>
+            <div>
+              <p>{infState.yearNum}</p>
+              {/* <p>2021</p> */}
+            </div>
+            <div>
+              <p>{infState.monthNum}</p>
+              {/* <p>04</p> */}
+            </div>
+            <div>
+              <p>{infState.numDay}</p>
+            </div>
+            <div>
+              <p>{infState.dayNum}</p>
+              {/* <p>Monday</p> */}
+            </div>
+            <div>
+              <img
+                src={`http://openweathermap.org/img/w/${infState.img}.png`}
+              />
+              {/* <p>{infState.img}</p> */}
+              {/* <p>img</p> */}
+            </div>
+            <div>
+              <p>{infState.todayTemp}</p>
+              {/* <p>todayTemp</p> */}
+            </div>
+            <div>
+              <p>{infState.likeTemp}</p>
+              {/* <p>likeTemp</p> */}
+            </div>
+            <div>
+              {/* <p>{wind}</p> */}
+              <p>wind</p>
+            </div>
+            <div>
+              {/* <p>{speedWind}</p> */}
+              <p>speed</p>
+            </div>
+            <div>
+              {/* <p>{humidity}</p> */}
+              <p>humidity</p>
+            </div>
+            <div>
+              {/* <p>{pressure}</p> */}
+              <p>pressure</p>
+            </div>
+          </div>
+          {/* передай сюда массив в inderBar */}
+          <UnderBar />
         </div>
-        <div>
-          {/* <p>{monthNum}</p> */}
-          <p>04</p>
-        </div>
-        <div>
-          <p>{numDay}</p>
-        </div>
-        <div>
-          {/* <p>{dayNum}</p> */}
-          <p>Monday</p>
-        </div>
-        <div>
-          {/* <p>{img}</p> */}
-          <p>img</p>
-        </div>
-        <div>
-          {/* <p>{todayTemp}</p> */}
-          <p>todayTemp</p>
-        </div>
-        <div>
-          {/* <p>{likeTemp}</p> */}
-          <p>likeTemp</p>
-        </div>
-        <div>
-          {/* <p>{wind}</p> */}
-          <p>wind</p>
-        </div>
-        <div>
-          {/* <p>{speedWind}</p> */}
-          <p>speed</p>
-        </div>
-        <div>
-          {/* <p>{humidity}</p> */}
-          <p>humidity</p>
-        </div>
-        <div>
-          {/* <p>{pressure}</p> */}
-          <p>pressure</p>
-        </div>
-      </div>
-      <UnderBar/>
-      </div>
+      ) : null}
     </>
   );
 };

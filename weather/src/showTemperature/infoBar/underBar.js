@@ -17,20 +17,14 @@ const UnderBar = () => {
   }, []);
 
   useEffect(() => {
-    console.log(detailsArr);
+    // console.log(detailsArr);
   }, [detailsArr]);
   // testData
 
-  const secondCardRender = detailsArr.map(({ time, img, temp, humidity}) => {
+  const secondCardRender = detailsArr.map(({ time, img, temp, humidity }) => {
     return (
       <>
-        <MiniInfo
-          time={time}
-          img={img}
-          temp={temp}
-          humidity={humidity}
-    
-        />
+        <MiniInfo time={time} img={img} temp={temp} humidity={humidity} />
       </>
     );
   });

@@ -1,6 +1,6 @@
 export default function transformDataForTopBar(oneCallData) {
   const { daily } = oneCallData;
-  console.log(oneCallData);
+
   const arrCountDays = [0, 1, 2, 3, 4];
   const getDayWeek = (date) => {
     const DayName = [

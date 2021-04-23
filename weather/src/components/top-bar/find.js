@@ -33,7 +33,7 @@ const Find = () => {
   };
 
   useEffect(() => {
-    console.log(stateCity);
+    // console.log(stateCity);
   }, [stateCity]);
 
   return (
@@ -46,7 +46,10 @@ const Find = () => {
         placeholder="Enter the city you are interested in"
         className="input"
       />
-      <button onClick={getData} className="button"> Here we go</button>
+      <button onClick={getData} className="button">
+        {" "}
+        Here we go
+      </button>
       <p style={{ fontSize: "2em", color: "green" }}> {cityShow}</p>
     </div>
   );

@@ -1,4 +1,4 @@
-import { INPUT_CITY, LOAD_DATA } from "./../actionType";
+import { INPUT_CITY, LOAD_DATA, PAGE_SET, FIND_DAY } from "./../actionType";
 import transformDataForTopBar from "./../../api/trasformDataForTopBar";
 import infoDetailsArr from "./../../api/infoBarTransform";
 
@@ -15,15 +15,9 @@ const initialState = {
       tMax: "+10",
     },
   ],
-  detailsArr: [
-    {
-      time: "---",
-      img: "04d",
-      temp: "---",
-      humidity: "---",
-    },
-  ],
-  // detailsArr: null,
+  detailsArr: null,
+  page: null,
+  detailsDay: null,
 };
 
 export default function reducer(state = initialState, action) {
@@ -37,6 +31,7 @@ export default function reducer(state = initialState, action) {
 
     case LOAD_DATA:
       const { fiveDaysData, oneCallData } = action.data;
+     
       return {
         ...state,
         allDataObjTwo: action.data,
@@ -45,7 +40,21 @@ export default function reducer(state = initialState, action) {
       };
 
       break;
+    case PAGE_SET:
+      return {
+        ...state,
+        page: action.page,
+      };
+    case FIND_DAY: {
+      const page = action.page;
 
+      const dayF = state.detailsArr.find(({ dayNum }) => +page === +dayNum);
+      console.log(page);
+      return {
+        ...state,
+        detailsDay: dayF,
+      };
+    }
     default:
       return state;
       break;

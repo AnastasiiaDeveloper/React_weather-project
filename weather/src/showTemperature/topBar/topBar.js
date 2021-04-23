@@ -17,7 +17,7 @@ const TopBar = () => {
   }, []);
 
   useEffect(() => {
-    console.log(arrTop);
+    // console.log(arrTop);
   }, [arrTop]);
   // testData
 
