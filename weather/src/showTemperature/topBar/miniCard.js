@@ -29,7 +29,7 @@ const MiniCard = ({ day, dateDay, month, img, tMin, tMax }) => {
           <p className={"month"}>{month}</p>
         </div>
         <div>
-          <img src={`http://openweathermap.org/img/w/${img}.png`} />
+          <img className={"img"} src={`http://openweathermap.org/img/w/${img}.png`} />
         </div>
         <div className={"temp"}>
           <p className={"min"}>

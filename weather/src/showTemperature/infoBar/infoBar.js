@@ -43,54 +43,34 @@ const InfoBar = () => {
       {infState ? (
         <div className={"underBlock"}>
           <div className={"cardBlock2"}>
-            <div>
-              <p>{infState.yearNum}</p>
-              {/* <p>2021</p> */}
+            <div className={"selectedDate"}>
+              <p className={"num"}>{infState.dayNum}</p>
+              <p className={"month"}>0{infState.monthNum}</p>
+              <p>20{infState.yearNum}</p>
             </div>
             <div>
-              <p>{infState.monthNum}</p>
-              {/* <p>04</p> */}
-            </div>
-            <div>
-              <p>{infState.numDay}</p>
-            </div>
-            <div>
-              <p>{infState.dayNum}</p>
-              {/* <p>Monday</p> */}
-            </div>
-            <div>
-              <img
+              <img className={"img"}
                 src={`http://openweathermap.org/img/w/${infState.img}.png`}
               />
-              {/* <p>{infState.img}</p> */}
-              {/* <p>img</p> */}
             </div>
             <div>
-              <p>{infState.todayTemp}</p>
-              {/* <p>todayTemp</p> */}
+              <p className={"tempToday"}> temp: {infState.todayTemp} </p>
+            </div>
+
+            <div>
+              <p>  feels like: {infState.likeTemp} </p>
             </div>
             <div>
-              <p>{infState.likeTemp}</p>
-              {/* <p>likeTemp</p> */}
+              <p>wind-speed: {infState.speedWind} m/s</p>
             </div>
             <div>
-              {/* <p>{wind}</p> */}
-              <p>wind</p>
+              <p>humidity: {infState.humidity} %</p>
             </div>
             <div>
-              {/* <p>{speedWind}</p> */}
-              <p>speed</p>
-            </div>
-            <div>
-              {/* <p>{humidity}</p> */}
-              <p>humidity</p>
-            </div>
-            <div>
-              {/* <p>{pressure}</p> */}
-              <p>pressure</p>
+              <p>pressure: {infState.pressure} hPa</p>
             </div>
           </div>
-          {/* передай сюда массив в inderBar */}
+          {/* передай сюда массив в underBar */}
           <UnderBar />
         </div>
       ) : null}

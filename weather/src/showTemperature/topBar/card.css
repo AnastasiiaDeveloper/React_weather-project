@@ -1,6 +1,6 @@
 .cardBlock {
   width: 180px;
-  height: 164px;
+  height: 120px;
   border: 1px solid rgb(207, 198, 198);
   border-radius: 20px;
   text-align: center;
@@ -18,10 +18,11 @@
 
 .date {
   display: flex;
+  margin-top: -16px;
 }
 
 .dateDay{
-  margin-left: 50px;
+  margin-left: 60px;
 }
 
 .month {
@@ -32,9 +33,15 @@
 }
 
 .min {
+  margin-top: -8px;
   margin-left: 16px;
 }
 
 .max {
+  margin-top: -8px;
   margin-left: 12px;
+}
+
+.img {
+  margin-top: -10px;
 }

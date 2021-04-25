@@ -5,7 +5,7 @@ import MiniInfo from "./miniInfo";
 import "./info.css";
 
 const UnderBar = () => {
-  const detailsArr = useSelector((state) => state.detailsArr);
+  const arrTemp = useSelector((state) => state.arrTemp);
   const dispatch = useDispatch();
 
   const firstLoadThunk = () => {
@@ -17,11 +17,11 @@ const UnderBar = () => {
   }, []);
 
   useEffect(() => {
-    // console.log(detailsArr);
-  }, [detailsArr]);
-  // testData
+   
+  }, [arrTemp]);
+  
 
-  const secondCardRender = detailsArr.map(({ time, img, temp, humidity }) => {
+  const secondCardRender = arrTemp.map(({ time, img, temp, humidity }) => {
     return (
       <>
         <MiniInfo time={time} img={img} temp={temp} humidity={humidity} />

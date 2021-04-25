@@ -50,7 +50,7 @@ const Find = () => {
         {" "}
         Here we go
       </button>
-      <p style={{ fontSize: "2em", color: "green" }}> {cityShow}</p>
+      <p className={"cityShow"} style={{ fontSize: "2em", color: "green" }}> {cityShow}</p>
     </div>
   );
 };

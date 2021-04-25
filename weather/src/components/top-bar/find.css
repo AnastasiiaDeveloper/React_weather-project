@@ -6,6 +6,7 @@
   border-radius: 3px;
   border: none;
   border-bottom: 1px solid #ccc;
+  /* margin-top: -60px; */
 }
 .input:focus {
   outline: none;
@@ -14,6 +15,7 @@
 .part-for-input {
   text-align: center;
   padding: 25px;
+  padding-top: 30px;
 }
 
 .button {
@@ -57,4 +59,7 @@ button:hover {
   }
   @keyframes pulsate {
 	50% {color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff;}
+  }
+  .cityShow {
+	  margin-top: 12px;
   }

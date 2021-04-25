@@ -15,6 +15,14 @@ const initialState = {
       tMax: "+10",
     },
   ],
+  arrTemp: [
+    {
+      time: "00:00",
+      img: "04d",
+      temp: "5",
+      humidity: "9",
+    },
+  ],
   detailsArr: null,
   page: null,
   detailsDay: null,
