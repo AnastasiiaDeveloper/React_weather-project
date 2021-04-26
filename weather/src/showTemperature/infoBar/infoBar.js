@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import UnderBar from "./underBar";
 import { pageSet, findDay } from "./../../redux/actions";
 import "./info.css";
+import MainInfo from "./mainInfo";
 
 const InfoBar = () => {
   const history = useHistory();
@@ -40,40 +41,23 @@ const InfoBar = () => {
 
   return (
     <>
-      {infState ? (
-        <div className={"underBlock"}>
-          <div className={"cardBlock2"}>
-            <div className={"selectedDate"}>
-              <p className={"num"}>{infState.dayNum}</p>
-              <p className={"month"}>0{infState.monthNum}</p>
-              <p>20{infState.yearNum}</p>
-            </div>
-            <div>
-              <img className={"img"}
-                src={`http://openweathermap.org/img/w/${infState.img}.png`}
-              />
-            </div>
-            <div>
-              <p className={"tempToday"}> temp: {infState.todayTemp} </p>
-            </div>
-
-            <div>
-              <p>  feels like: {infState.likeTemp} </p>
-            </div>
-            <div>
-              <p>wind-speed: {infState.speedWind} m/s</p>
-            </div>
-            <div>
-              <p>humidity: {infState.humidity} %</p>
-            </div>
-            <div>
-              <p>pressure: {infState.pressure} hPa</p>
-            </div>
-          </div>
-          {/* передай сюда массив в underBar */}
-          <UnderBar />
-        </div>
-      ) : null}
+      {
+        infState ? (
+          <MainInfo
+            dayNum={infState.dayNum}
+            monthNum={infState.monthNum}
+            img={infState.img}
+            yearNum={infState.yearNum}
+            todayTemp={infState.todayTemp}
+            likeTemp={infState.likeTemp}
+            speedWind={infState.speedWind}
+            humidity={infState.humidity}
+            pressure={infState.pressure}
+            tempArr={infState.tempArr}
+          />
+        ) : null
+        // loader
+      }
     </>
   );
 };

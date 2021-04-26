@@ -21,7 +21,7 @@ const MainWidget = () => {
       {infBarShow ? (
         <>
           {" "}
-          {/* <Route path="/" component={InfoBar} /> */}
+          <Route path="/" exact component={InfoBar} />
           <Route path="/day/:numDay" component={InfoBar} />
         </>
       ) : null}

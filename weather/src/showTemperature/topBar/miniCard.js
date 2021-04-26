@@ -19,7 +19,11 @@ const MiniCard = ({ day, dateDay, month, img, tMin, tMax }) => {
   }, [tMin, tMax]);
 
   return (
-    <NavLink to={`/day/${dateDay}`} style={{ textDecoration: "none" }}>
+    <NavLink
+      to={`/day/${dateDay}`}
+      style={{ textDecoration: "none" , backgroundColor: "white" , borderRadius: "17px"}}
+      activeStyle={{ backgroundColor: "#1E90FF" }}
+    >
       <div className={"cardBlock"}>
         <div>
           <p>{day}</p>
@@ -29,7 +33,10 @@ const MiniCard = ({ day, dateDay, month, img, tMin, tMax }) => {
           <p className={"month"}>{month}</p>
         </div>
         <div>
-          <img className={"img"} src={`http://openweathermap.org/img/w/${img}.png`} />
+          <img
+            className={"img"}
+            src={`http://openweathermap.org/img/w/${img}.png`}
+          />
         </div>
         <div className={"temp"}>
           <p className={"min"}>

@@ -52,7 +52,7 @@ export default function infoDetailsArr(fiveDaysData, arrOneCall) {
       switch (param) {
         case "img":
           return findHours(hours).length < 1
-            ? "--"
+            ? false
             : findHours(hours)[0].info.weather[0].icon;
           break;
         case "temp":

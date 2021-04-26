@@ -1,5 +1,5 @@
 import "./info.css";
-
+import { useState } from "react";
 
 const MiniInfo = ({ time, img, temp, humidity }) => {
   return (
@@ -8,16 +8,22 @@ const MiniInfo = ({ time, img, temp, humidity }) => {
         <p>time: {time}</p>
       </div>
       <div>
-      <img className={"miniImg"} src={`http://openweathermap.org/img/w/${img}.png`} />
+        {img ? (
+          <img
+            className={"miniImg"}
+            src={`http://openweathermap.org/img/w/${img}.png`}
+          />
+        ) : (
+          <p> нет данных</p>
+        )}
       </div>
       <div>
-        <p className={"miniTemp"}> temp: {temp} </p>
+        <p className={"miniTemp"}> temp: {temp} &deg; </p>
       </div>
       <div>
         <p>humidity: {humidity} %</p>
       </div>
     </div>
-    
   );
 };
 export default MiniInfo;
