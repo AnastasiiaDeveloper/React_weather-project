@@ -1,12 +1,11 @@
 .cardBlock {
   width: 180px;
-  height: 120px;
-  border: 1px solid rgb(207, 198, 198);
-  border-radius: 20px;
+  height: 110px;
+  border: 1px solid rgb(245, 239, 239);
+  border-radius: 15px;
   text-align: center;
   font-size: 15px;
   padding-bottom: 40px;
-  /* background-color: aliceblue; */
 }
 .positionTopCard {
   width: 900px;

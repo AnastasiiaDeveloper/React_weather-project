@@ -5,7 +5,7 @@ const MiniInfo = ({ time, img, temp, humidity }) => {
   return (
     <div className={"miniCardBlock"}>
       <div>
-        <p>time: {time}</p>
+        <p className={"timeP"}>time: {time}</p>
       </div>
       <div>
         {img ? (
@@ -14,14 +14,14 @@ const MiniInfo = ({ time, img, temp, humidity }) => {
             src={`http://openweathermap.org/img/w/${img}.png`}
           />
         ) : (
-          <p> нет данных</p>
+          <p> no data </p>
         )}
       </div>
       <div>
         <p className={"miniTemp"}> temp: {temp} &deg; </p>
       </div>
       <div>
-        <p>humidity: {humidity} %</p>
+        <p className={"miniHum"}>humidity: {humidity} %</p>
       </div>
     </div>
   );

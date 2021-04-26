@@ -5,31 +5,20 @@ import MiniInfo from "./miniInfo";
 import "./info.css";
 
 const UnderBar = ({ arrDayParts }) => {
-  // console.log(arrDayParts);
-  // // const arrTemp = useSelector((state) => state.arrTemp);
-  // // const dispatch = useDispatch();
 
-  // // const firstLoadThunk = () => {
-  // //   dispatch(thunkStartLoadData());
-  // // };
-
-  // // useEffect(() => {
-  // //   firstLoadThunk();
-  // // }, []);
-
-  // // useEffect(() => {}, [arrTemp]);
   const renderArrPartsDay = arrDayParts.map(({ partOfTheDay, twoTimes }) => {
-    // console.log(partOfTheDay, twoTimes);
+   
     return (
       <div
         style={{
-          backgroundColor: "#fff",
-          borderRadius: "8px",
-          border: "1px solid #000",
+          backgroundColor: "#87CEFA",
+          borderRadius: "15px",
+          border: "1px solid #fff",
           marginRight: "4px",
+          height: "100%"
         }}
       >
-        <p>{partOfTheDay}</p>
+        <p className={"parts"}>{partOfTheDay}</p>
         {twoTimes.map(({ time, img, temp, humidity }) => {
           return (
             <MiniInfo time={time} img={img} temp={temp} humidity={humidity} />
