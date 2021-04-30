@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/weather-project/static/css/main.87fc05c8.chunk.css",
+    "main.js": "/weather-project/static/js/main.23af1184.chunk.js",
+    "main.js.map": "/weather-project/static/js/main.23af1184.chunk.js.map",
+    "runtime-main.js": "/weather-project/static/js/runtime-main.8a1581a4.js",
+    "runtime-main.js.map": "/weather-project/static/js/runtime-main.8a1581a4.js.map",
+    "static/js/2.3250b30c.chunk.js": "/weather-project/static/js/2.3250b30c.chunk.js",
+    "static/js/2.3250b30c.chunk.js.map": "/weather-project/static/js/2.3250b30c.chunk.js.map",
+    "static/js/3.da6f8137.chunk.js": "/weather-project/static/js/3.da6f8137.chunk.js",
+    "static/js/3.da6f8137.chunk.js.map": "/weather-project/static/js/3.da6f8137.chunk.js.map",
+    "index.html": "/weather-project/index.html",
+    "static/css/main.87fc05c8.chunk.css.map": "/weather-project/static/css/main.87fc05c8.chunk.css.map",
+    "static/js/2.3250b30c.chunk.js.LICENSE.txt": "/weather-project/static/js/2.3250b30c.chunk.js.LICENSE.txt",
+    "static/media/spring.16f4b0b3.jpg": "/weather-project/static/media/spring.16f4b0b3.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8a1581a4.js",
+    "static/js/2.3250b30c.chunk.js",
+    "static/css/main.87fc05c8.chunk.css",
+    "static/js/main.23af1184.chunk.js"
+  ]
+}
