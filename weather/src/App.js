@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Provider } from "react-redux";
 import store from "./redux/reducer/rootReducer";
-// import FormForToday from "./components/weather-pages/today-page";
 import "./App.css";
 import Find from "./components/top-bar/find";
 import MainWidget from "./showTemperature/mainWidget";
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-import InnerBgImg from "./components/backgr-img/spring.jpg"
+import InnerBgImg from "./components/backgr-img/spring.jpg";
 
 const App = () => {
   return (
@@ -15,7 +14,7 @@ const App = () => {
       <Provider store={store}>
         <div
           className="backgroung-image"
-          style={{ backgroundImage: "url(" + InnerBgImg +")" }}
+          style={{ backgroundImage: "url(" + InnerBgImg + ")" }}
         >
           <Find />
           <MainWidget />

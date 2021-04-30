@@ -1,4 +1,10 @@
-import { INPUT_CITY, LOAD_DATA, PAGE_SET, FIND_DAY } from "./../actionType";
+import {
+  INPUT_CITY,
+  LOAD_DATA,
+  PAGE_SET,
+  FIND_DAY,
+  SHOW_ERR,
+} from "./../actionType";
 import transformDataForTopBar from "./../../api/trasformDataForTopBar";
 import infoDetailsArr from "./../../api/infoBarTransform";
 
@@ -26,10 +32,17 @@ const initialState = {
   detailsArr: null,
   page: null,
   detailsDay: null,
+  showErrFind: false,
 };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
+    case SHOW_ERR:
+      return {
+        ...state,
+        showErrFind: action.valueShow,
+      };
+      break;
     case INPUT_CITY:
       return {
         ...state,
@@ -39,13 +52,21 @@ export default function reducer(state = initialState, action) {
 
     case LOAD_DATA:
       const { fiveDaysData, oneCallData } = action.data;
-     
-      return {
-        ...state,
-        allDataObjTwo: action.data,
-        arrTop: transformDataForTopBar(oneCallData),
-        detailsArr: infoDetailsArr(fiveDaysData, oneCallData),
-      };
+      if (fiveDaysData === 404) {
+        console.log("такого города не найдено");
+        return {
+          ...state,
+          showErrFind: true,
+        };
+      } else {
+        return {
+          ...state,
+          allDataObjTwo: action.data,
+          arrTop: transformDataForTopBar(oneCallData),
+          detailsArr: infoDetailsArr(fiveDaysData, oneCallData),
+          showErrFind: false,
+        };
+      }
 
       break;
     case PAGE_SET:

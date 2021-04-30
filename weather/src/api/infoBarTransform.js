@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 export default function infoDetailsArr(fiveDaysData, arrOneCall) {
   const { list } = fiveDaysData;
   const arrCountDays = [0, 1, 2, 3, 4];
@@ -69,15 +70,18 @@ export default function infoDetailsArr(fiveDaysData, arrOneCall) {
     };
     return [
       {
+        id: uuidv4(),
         partOfTheDay: "night",
         twoTimes: [
           {
+            id: uuidv4(),
             time: "00:00",
             img: ifEmptyArr(0, "img"),
             temp: ifEmptyArr(0, "temp"),
             humidity: ifEmptyArr(0, "humidity"),
           },
           {
+            id: uuidv4(),
             time: "03:00",
             img: ifEmptyArr(3, "img"),
             temp: ifEmptyArr(3, "temp"),
@@ -86,15 +90,18 @@ export default function infoDetailsArr(fiveDaysData, arrOneCall) {
         ],
       },
       {
+        id: uuidv4(),
         partOfTheDay: "morning",
         twoTimes: [
           {
+            id: uuidv4(),
             time: "06:00",
             img: ifEmptyArr(6, "img"),
             temp: ifEmptyArr(6, "temp"),
             humidity: ifEmptyArr(6, "humidity"),
           },
           {
+            id: uuidv4(),
             time: "09:00",
             img: ifEmptyArr(9, "img"),
             temp: ifEmptyArr(9, "temp"),
@@ -103,15 +110,18 @@ export default function infoDetailsArr(fiveDaysData, arrOneCall) {
         ],
       },
       {
+        id: uuidv4(),
         partOfTheDay: "day",
         twoTimes: [
           {
+            id: uuidv4(),
             time: "12:00",
             img: ifEmptyArr(12, "img"),
             temp: ifEmptyArr(12, "temp"),
             humidity: ifEmptyArr(12, "humidity"),
           },
           {
+            id: uuidv4(),
             time: "15:00",
             img: ifEmptyArr(15, "img"),
             temp: ifEmptyArr(15, "temp"),
@@ -120,15 +130,18 @@ export default function infoDetailsArr(fiveDaysData, arrOneCall) {
         ],
       },
       {
+        id: uuidv4(),
         partOfTheDay: "evening",
         twoTimes: [
           {
+            id: uuidv4(),
             time: "18:00",
             img: ifEmptyArr(18, "img"),
             temp: ifEmptyArr(18, "temp"),
             humidity: ifEmptyArr(18, "humidity"),
           },
           {
+            id: uuidv4(),
             time: "21:00",
             img: ifEmptyArr(21, "img"),
             temp: ifEmptyArr(21, "temp"),
@@ -150,6 +163,7 @@ export default function infoDetailsArr(fiveDaysData, arrOneCall) {
     // oneCall
     const tempAllDayOneCall = allDayTemp(numDayGet)[0];
     return {
+      id: uuidv4(),
       yearNum: dateDay.getFullYear().toString().substr(-2),
       monthNum: dateDay.getMonth() + 1,
       dayNum: numDayGet,

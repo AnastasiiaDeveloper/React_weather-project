@@ -1,19 +1,14 @@
 import { useSelector, useDispatch } from "react-redux";
 import React, { useState, useEffect } from "react";
 import "./find.css";
-import {
-  inputCity,
-  thunkStartLoadData,
-  thunkSetInsertedCity,
-} from "../../redux/actions";
+import { inputCity, thunkSetInsertedCity } from "../../redux/actions";
 
 const Find = () => {
   const [cityName, setCityName] = useState("");
-  // const [nameCityShow, setNameCityShow] = useState("");
-
-  const stateCity = useSelector((state) => state);
-
+  const [cityNameSelector, setCityNameSelector] = useState("");
   const cityShow = useSelector((state) => state.findCity);
+  const [stateShow, setStateShow] = useState(false);
+  const showErr = useSelector((state) => state.showErrFind);
 
   const dispatch = useDispatch();
 
@@ -33,8 +28,12 @@ const Find = () => {
   };
 
   useEffect(() => {
-    // console.log(stateCity);
-  }, [stateCity]);
+    console.log(cityShow);
+    setCityNameSelector(cityShow);
+  }, [cityShow]);
+  useEffect(() => {
+    setStateShow(showErr);
+  }, [showErr]);
 
   return (
     <div className="part-for-input">
@@ -50,7 +49,13 @@ const Find = () => {
         {" "}
         Here we go
       </button>
-      <p className={"cityShow"} style={{ fontSize: "2em", color: "green" }}> {cityShow}</p>
+      <p className={"cityShow"} style={{ fontSize: "2em", color: "green" }}>
+        {stateShow ? (
+          <>The city {cityNameSelector} doesn't exist</>
+        ) : (
+          <>{cityNameSelector}</>
+        )}
+      </p>
     </div>
   );
 };

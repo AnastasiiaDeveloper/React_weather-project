@@ -21,20 +21,19 @@ const TopBar = () => {
   }, [arrTop]);
   // testData
 
-  const cardRender = arrTop.map(({ day, dateDay, month, img, tMin, tMax }) => {
-    return (
-      <>
-        <MiniCard
-          day={day}
-          dateDay={dateDay}
-          month={month}
-          img={img}
-          tMin={tMin}
-          tMax={tMax}
-        />
-      </>
-    );
-  });
+  const cardRender = arrTop.map(
+    ({ id, day, dateDay, month, img, tMin, tMax }) => (
+      <MiniCard
+        key={id}
+        day={day}
+        dateDay={dateDay}
+        month={month}
+        img={img}
+        tMin={tMin}
+        tMax={tMax}
+      />
+    )
+  );
   return <div className={"positionTopCard"}>{cardRender}</div>;
 };
 export default TopBar;

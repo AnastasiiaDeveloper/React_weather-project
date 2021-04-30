@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 export default function transformDataForTopBar(oneCallData) {
   const { daily } = oneCallData;
 
@@ -56,6 +57,7 @@ export default function transformDataForTopBar(oneCallData) {
     let maxTemp = Math.floor(tempAllDays[0].temp.max - 273);
 
     return {
+      id: uuidv4(),
       day: nameDay,
       month: nameMonth,
       dateDay: dateDay.getDate(),

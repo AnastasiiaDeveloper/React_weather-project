@@ -1,6 +1,18 @@
-import { INPUT_CITY, LOAD_DATA, PAGE_SET, FIND_DAY } from "./actionType";
+import {
+  INPUT_CITY,
+  LOAD_DATA,
+  PAGE_SET,
+  FIND_DAY,
+  SHOW_ERR,
+} from "./actionType";
 import api from "./../api/apiWeather";
 
+export const errShow = (value) => {
+  return {
+    type: SHOW_ERR,
+    valueShow: value,
+  };
+};
 export const inputCity = (city) => {
   return {
     type: INPUT_CITY,

@@ -1,7 +1,7 @@
 .cardBlock2 {
   width: 180px;
-  height: 263px;
-  border: 1px solid rgb(185, 180, 180);
+  height: 250px;
+  border: 6px solid rgb(174, 157, 206);
   border-radius: 20px;
   text-align: center;
   font-size: 15px;
@@ -19,7 +19,7 @@
 .miniCardBlock {
   width: 176px;
   height: 80px;
-  border: 1px solid rgb(184, 181, 181);
+  border: 1px solid rgb(155, 150, 150);
   border-radius: 20px;
   text-align: center;
   font-size: 15px;

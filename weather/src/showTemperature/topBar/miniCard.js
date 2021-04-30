@@ -21,7 +21,11 @@ const MiniCard = ({ day, dateDay, month, img, tMin, tMax }) => {
   return (
     <NavLink
       to={`/day/${dateDay}`}
-      style={{ textDecoration: "none" , backgroundColor: "white" , borderRadius: "17px"}}
+      style={{
+        textDecoration: "none",
+        backgroundColor: "white",
+        borderRadius: "17px",
+      }}
       activeStyle={{ backgroundColor: "#87CEFA" }}
     >
       <div className={"cardBlock"}>
